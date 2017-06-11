@@ -108,6 +108,10 @@ int EthernetClass::maintain()
 	return rc;
 }
 
+uint8_t EthernetClass::softReset() {
+	return W5100.softReset();
+}
+
 IPAddress EthernetClass::localIP()
 {
 	IPAddress ret;
