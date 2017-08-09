@@ -23,6 +23,7 @@ private:
 	static IPAddress _dnsServerAddress;
 	static DhcpClass* _dhcp;
 public:
+	uint8_t isW5500(void);
 	// Initialise the Ethernet shield to use the provided MAC address and
 	// gain the rest of the configuration through DHCP.
 	// Returns 0 if the DHCP configuration failed, and 1 if it succeeded
@@ -44,6 +45,8 @@ public:
 	friend class EthernetClient;
 	friend class EthernetServer;
 	friend class EthernetUDP;
+
+	//static uint8_t *getMac();
 private:
 	// Opens a socket(TCP or UDP or IP_RAW mode)
 	static uint8_t socketBegin(uint8_t protocol, uint16_t port);
@@ -237,7 +240,7 @@ public:
 	IPAddress getGatewayIp();
 	IPAddress getDhcpServerIp();
 	IPAddress getDnsServerIp();
-
+	
 	int beginWithDHCP(uint8_t *, unsigned long timeout = 60000, unsigned long responseTimeout = 4000);
 	int checkLease();
 };

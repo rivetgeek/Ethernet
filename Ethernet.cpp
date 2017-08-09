@@ -5,6 +5,12 @@
 IPAddress EthernetClass::_dnsServerAddress;
 DhcpClass* EthernetClass::_dhcp = NULL;
 
+// uint8_t * EthernetClass::getMac() {
+// 	uint8_t result;
+// 	return W5100.getMACAddress();
+// }
+
+
 int EthernetClass::begin(uint8_t *mac, unsigned long timeout, unsigned long responseTimeout)
 {
 	static DhcpClass s_dhcp;
@@ -139,7 +145,10 @@ IPAddress EthernetClass::gatewayIP()
 	return ret;
 }
 
-
+uint8_t EthernetClass::isW5500(void) 
+{
+	return W5100.isW5500();
+}
 
 
 

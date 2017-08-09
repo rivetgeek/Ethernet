@@ -252,7 +252,7 @@ public:
 #undef __SOCKET_REGISTER_N
 
 
-private:
+public:
   static uint8_t chip;
   static uint8_t ss_pin;
   static uint8_t isW5100(void);
