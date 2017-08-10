@@ -20,7 +20,7 @@
 // uncomment this if you know you'll never need W5100 support
 #define SPI_ETHERNET_SETTINGS SPISettings(30000000, MSBFIRST, SPI_MODE0)
 
-#define MAX_SOCK_NUM 4
+#define MAX_SOCK_NUM 2
 
 typedef uint8_t SOCKET;
 
@@ -261,7 +261,7 @@ public:
 
 public:
   static uint8_t softReset(void);
-  static const int SOCKETS = 4;
+  static const int SOCKETS = 2;
   static uint16_t SMASK;
   static uint16_t SSIZE;
 //private:
